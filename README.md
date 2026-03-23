@@ -1,6 +1,6 @@
 # AI Resume Analyzer 
 
-AI-Powered Resume Analyzer is a modern web application that leverages AI to analyze resumes, provide ATS (Applicant Tracking System) scores, and deliver actionable feedback to help users improve their job applications. Built with React, TypeScript, Zustand, and powered by Puter.js for authentication, file storage, and AI services.
+AI-Powered Resume Analyzer is a modern web application that leverages AI to analyze resumes, provide ATS (Applicant Tracking System) scores, and deliver actionable feedback to help users improve their job applications. Built with React, TypeScript, Zustand, and powered by Puter.js for authentication and storage plus Gemini for resume analysis.
 
 <img width="1543" height="868" alt="Screenshot 2025-07-23 153032" src="https://github.com/user-attachments/assets/637146d3-a68d-4516-9bcb-2074f34cdb5d" />
 
@@ -35,12 +35,12 @@ AI-Powered Resume Analyzer is a modern web application that leverages AI to anal
 ## 🛠️ Tech Stack
 
 - **React 19** & **TypeScript**
-- **Claude Sonnet 4** AI Model
+- **Google Gemini** AI Model
 - **React Router 7** (with SSR support)
 - **Vite** for fast development
 - **Tailwind CSS** & **tw-animate-css** for styling and animation
 - **Zustand** for state management
-- **Puter.js** for authentication, file system, AI, and key-value storage
+- **Puter.js** for authentication, file system, and key-value storage
 - **pdfjs-dist** for PDF preview and conversion
 
 ---
@@ -86,12 +86,18 @@ ai-resume-analyzer/
    npm install
    ```
 
-3. **Run the development server:**
+3. **Add your Gemini API key:**
+   Create a `.env` file in the project root and add:
+   ```sh
+   GEMINI_API_KEY=your_gemini_api_key_here
+   ```
+
+4. **Run the development server:**
    ```sh
    npm run dev
    ```
 
-4. **Open in your browser:**
+5. **Open in your browser:**
    ```
    http://localhost:5173
    ```
