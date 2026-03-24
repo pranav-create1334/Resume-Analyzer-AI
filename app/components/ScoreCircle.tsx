@@ -7,7 +7,7 @@ const ScoreCircle = ({ score = 75 }: { score: number }) => {
     const strokeDashoffset = circumference * (1 - progress);
 
     return (
-        <div className="relative w-[100px] h-[100px]">
+        <div className="relative h-[100px] w-[100px]">
             <svg
                 height="100%"
                 width="100%"
@@ -19,15 +19,15 @@ const ScoreCircle = ({ score = 75 }: { score: number }) => {
                     cx="50"
                     cy="50"
                     r={normalizedRadius}
-                    stroke="#e5e7eb"
+                    stroke="#e8ebf2"
                     strokeWidth={stroke}
                     fill="transparent"
                 />
                 {/* Partial circle with gradient */}
                 <defs>
                     <linearGradient id="grad" x1="1" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#FF97AD" />
-                        <stop offset="100%" stopColor="#5171FF" />
+                        <stop offset="0%" stopColor="#d97e5f" />
+                        <stop offset="100%" stopColor="#516eff" />
                     </linearGradient>
                 </defs>
                 <circle
@@ -45,7 +45,7 @@ const ScoreCircle = ({ score = 75 }: { score: number }) => {
 
             {/* Score and issues */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="font-semibold text-sm">{`${score}/100`}</span>
+                <span className="text-sm font-semibold text-slate-900">{`${score}/100`}</span>
             </div>
         </div>
     );
