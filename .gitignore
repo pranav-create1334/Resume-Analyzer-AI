@@ -1,6 +1,6 @@
 .DS_Store
 /node_modules/
-.env
+.env // API 
 .env.local
 
 # React Router
