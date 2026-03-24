@@ -3,21 +3,13 @@
 AI-Powered Resume Analyzer is a modern web application that leverages AI to analyze resumes, provide ATS (Applicant Tracking System) scores, and deliver actionable feedback to help users improve their job applications. Built with React, TypeScript, Zustand, and powered by Puter.js for authentication and storage plus Gemini for resume analysis.
 
 
-
-
-
----
-
-
 ## 🚀 Features
 
 - **AI-Powered Resume Analysis:** Upload your resume and receive detailed feedback on ATS compatibility, tone, content, structure, and skills.
   
    **ATS Score:** Instantly see how your resume performs against automated screening systems.
 
-    **Actionable Tips:** Get categorized suggestions for improvement, including specific explanations.
-   
-   
+    **Actionable Tips:** Get categorized suggestions for improvement, including specific explanations.  
    
 - **Job-Aware Feedback:** Optionally provide job title and description for tailored analysis.
 - **Secure File Storage:** All files are managed securely via Puter.js.
