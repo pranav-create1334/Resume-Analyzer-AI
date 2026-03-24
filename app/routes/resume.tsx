@@ -57,22 +57,28 @@ const Resume = () => {
                     <span className="text-gray-800 text-sm font-semibold">Back to Homepage</span>
                 </Link>
             </nav>
-            <div className="flex flex-row w-full max-lg:flex-col-reverse">
-                <section className="feedback-section bg-[url('/images/bg-small.svg') bg-cover h-[100vh] sticky top-0 items-center justify-center">
+            <div className="mx-auto flex w-full max-w-7xl flex-row gap-4 max-lg:flex-col-reverse">
+                <section className="feedback-section sticky top-24 h-fit self-start rounded-[2rem] border border-white/70 bg-[url('/images/bg-small.svg')] bg-cover bg-center lg:max-w-[44%] lg:bg-[#f6f1ea]">
                     {imageUrl && resumeUrl && (
-                        <div className="animate-in fade-in duration-1000 gradient-border max-sm:m-0 h-[90%] max-wxl:h-fit w-fit">
+                        <div className="gradient-border h-full w-full animate-in fade-in duration-1000">
                             <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
                                 <img
                                     src={imageUrl}
-                                    className="w-full h-full object-contain rounded-2xl"
+                                    className="h-full max-h-[75vh] w-full rounded-[1.5rem] object-contain"
                                     title="resume"
                                 />
                             </a>
                         </div>
                     )}
                 </section>
-                <section className="feedback-section">
-                    <h2 className="text-4xl !text-black font-bold">Resume Review</h2>
+                <section className="feedback-section lg:max-w-[56%]">
+                    <div className="panel-card">
+                        <p className="section-kicker w-fit">Detailed analysis</p>
+                        <h2 className="mt-4 text-4xl !text-black font-bold">Resume Review</h2>
+                        <p className="mt-4 text-lg leading-8 text-slate-600">
+                            Explore the overall score, ATS readiness, and detailed category guidance in a cleaner review layout.
+                        </p>
+                    </div>
                     {feedback ? (
                         <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
                             <Summary feedback={feedback} />

@@ -110,17 +110,28 @@ const Upload = () => {
 
             <section className="main-section">
                 <div className="page-heading py-16">
+                    <p className="section-kicker">High-impact upload flow</p>
                     <h1>Smart feedback for your dream job</h1>
                     {isProcessing ? (
                         <>
                             <h2>{statusText}</h2>
-                            <img src="/images/resume-scan.gif" className="w-full" />
+                            <p className="section-copy">
+                                We are preparing your file, extracting the content, and building your feedback dashboard.
+                            </p>
+                            <div className="gradient-border w-full max-w-4xl">
+                                <img src="/images/resume-scan.gif" className="w-full rounded-[1.5rem]" />
+                            </div>
                         </>
                     ) : (
-                        <h2>Drop your resume for an ATS score and improvement tips</h2>
+                        <>
+                            <h2>Drop your resume for an ATS score and focused improvement tips</h2>
+                            <p className="section-copy">
+                                Add the role context, upload your PDF, and get a review experience that feels clear enough to act on right away.
+                            </p>
+                        </>
                     )}
                     {!isProcessing && (
-                        <form id="upload-form" onSubmit={handleSubmit} className="flex flex-col gap-4 mt-8">
+                        <form id="upload-form" onSubmit={handleSubmit} className="panel-card mt-6 max-w-4xl gap-5 text-left">
                             <div className="form-div">
                                 <label htmlFor="company-name">Company Name</label>
                                 <input type="text" name="company-name" placeholder="Company Name" id="company-name" />

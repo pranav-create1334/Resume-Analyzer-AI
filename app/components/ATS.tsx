@@ -33,26 +33,24 @@ const ATS: React.FC<ATSProps> = ({ score, suggestions }) => {
       : 'Needs Improvement';
 
   return (
-    <div className={`bg-gradient-to-b ${gradientClass} to-white rounded-2xl shadow-md w-full p-6`}>
-      {/* Top section with icon and headline */}
-      <div className="flex items-center gap-4 mb-6">
+    <div className={`w-full rounded-[2rem] bg-gradient-to-b ${gradientClass} to-white p-6 shadow-[0_24px_70px_rgba(15,23,42,0.08)] sm:p-8`}>
+      <div className="mb-6 flex items-center gap-4">
         <img src={iconSrc} alt="ATS Score Icon" className="w-12 h-12" />
         <div>
-          <h2 className="text-2xl font-bold">ATS Score - {score}/100</h2>
+          <p className="mb-2 w-fit rounded-full bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">Screening readiness</p>
+          <h2 className="text-2xl font-bold !text-slate-950">ATS Score - {score}/100</h2>
         </div>
       </div>
 
-      {/* Description section */}
       <div className="mb-6">
         <h3 className="text-xl font-semibold mb-2">{subtitle}</h3>
-        <p className="text-gray-600 mb-4">
+        <p className="mb-4 text-slate-600 leading-7">
           This score represents how well your resume is likely to perform in Applicant Tracking Systems used by employers.
         </p>
 
-        {/* Suggestions list */}
         <div className="space-y-3">
           {suggestions.map((suggestion, index) => (
-            <div key={index} className="flex items-start gap-3">
+            <div key={index} className="flex items-start gap-3 rounded-[1.25rem] bg-white/75 px-4 py-3">
               <img
                 src={suggestion.type === "good" ? "/icons/check.svg" : "/icons/warning.svg"}
                 alt={suggestion.type === "good" ? "Check" : "Warning"}
@@ -66,8 +64,7 @@ const ATS: React.FC<ATSProps> = ({ score, suggestions }) => {
         </div>
       </div>
 
-      {/* Closing encouragement */}
-      <p className="text-gray-700 italic">
+      <p className="italic text-slate-700">
         Keep refining your resume to improve your chances of getting past ATS filters and into the hands of recruiters.
       </p>
     </div>
