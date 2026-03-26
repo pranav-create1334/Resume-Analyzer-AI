@@ -18,7 +18,7 @@ const ScoreBadge: React.FC<ScoreBadgeProps> = ({ score }) => {
   }
 
   return (
-    <div className={`rounded-full px-3 py-1 ${badgeColor}`}>
+    <div className={`rounded-full px-3 py-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] ${badgeColor}`}>
       <p className="text-sm font-medium">{badgeText}</p>
     </div>
   );
