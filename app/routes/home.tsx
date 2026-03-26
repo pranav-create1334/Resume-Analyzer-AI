@@ -39,30 +39,81 @@ export default function Home() {
     loadResumes()
   }, []);
 
-  return <main className="bg-[url('/images/bg-main.svg')] bg-cover">
-    <Navbar />
+  return <main className="app-shell">
+    <div className="shell-content">
+      <Navbar />
 
-    <section className="main-section">
-      <div className="page-heading py-16">
-        <p className="section-kicker">Sharper first impressions</p>
-        <h1>Track Your Applications & Resume Ratings</h1>
-        {!loadingResumes && resumes?.length === 0 ? (
-            <h2>No resumes found yet. Upload your first resume to unlock a polished AI review.</h2>
-        ): (
-          <h2>Review your submissions, compare scores, and spot the strongest version of your resume.</h2>
-        )}
-        <p className="section-copy">
-          Keep every application in one clean workspace with clearer visuals, stronger hierarchy, and instant access to your latest resume analysis.
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          <Link to="/upload" className="primary-button w-fit min-w-[12rem]">
-            Analyze New Resume
-          </Link>
-          <div className="secondary-button cursor-default">
-            ATS insights in one view
+      <section className="main-section">
+        <div className="page-heading py-16">
+          <div className="split-panel items-center">
+            <div className="hero-copy">
+              <p className="eyebrow">Sharper first impressions</p>
+              <h1>Track Your Applications & Resume Ratings</h1>
+              {!loadingResumes && resumes?.length === 0 ? (
+                  <h2>No resumes found yet. Upload your first resume to unlock a polished AI review.</h2>
+              ): (
+                <h2>Review your submissions, compare scores, and spot the strongest version of your resume.</h2>
+              )}
+              <p className="section-copy">
+                Keep every application in one clean workspace with clearer visuals, stronger hierarchy, and instant access to your latest resume analysis.
+              </p>
+              <div className="hero-actions">
+                <Link to="/upload" className="primary-button w-fit min-w-[12rem]">
+                  Analyze New Resume
+                </Link>
+                <div className="secondary-button cursor-default">
+                  ATS insights in one view
+                </div>
+              </div>
+            </div>
+
+            <div className="hero-preview">
+              <div className="hero-preview-card">
+                <div className="preview-stack">
+                  <div className="preview-resume">
+                    <div className="preview-chip-row">
+                      <span className="preview-chip">Score</span>
+                      <span className="preview-chip">ATS</span>
+                      <span className="preview-chip">Insights</span>
+                    </div>
+                    <div className="preview-line w-[70%]" />
+                    <div className="preview-line soft w-[48%]" />
+                    <div className="space-y-3 pt-3">
+                      <div className="preview-line soft w-full" />
+                      <div className="preview-line soft w-[90%]" />
+                      <div className="preview-line soft w-[82%]" />
+                    </div>
+                    <div className="grid grid-cols-2 gap-3 pt-2">
+                      <div className="rounded-[1.2rem] bg-[#f6efe7] p-4">
+                        <div className="preview-line w-[60%]" />
+                        <div className="preview-line soft mt-3 w-[80%]" />
+                      </div>
+                      <div className="rounded-[1.2rem] bg-[#eff3ff] p-4">
+                        <div className="preview-line w-[55%]" />
+                        <div className="preview-line soft mt-3 w-[74%]" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="metrics-row">
+            <div className="metric-card">
+              <strong>{loadingResumes ? "..." : resumes.length}</strong>
+              <span>Saved Resume Reviews</span>
+            </div>
+            <div className="metric-card">
+              <strong>ATS</strong>
+              <span>Screening clarity at a glance</span>
+            </div>
+            <div className="metric-card">
+              <strong>AI</strong>
+              <span>Actionable guidance for each version</span>
+            </div>
           </div>
         </div>
-      </div>
       {loadingResumes && (
           <div className="panel-card flex flex-col items-center justify-center gap-4">
             <img src="/images/resume-scan-2.gif" className="w-[200px]" />
@@ -88,6 +139,7 @@ export default function Home() {
             </Link>
           </div>
       )}
-    </section>
+      </section>
+    </div>
   </main>
 }
