@@ -105,58 +105,107 @@ const Upload = () => {
     }
 
     return (
-        <main className="bg-[url('/images/bg-main.svg')] bg-cover">
-            <Navbar />
+        <main className="app-shell">
+            <div className="shell-content">
+                <Navbar />
 
-            <section className="main-section">
-                <div className="page-heading py-16">
-                    <p className="section-kicker">High-impact upload flow</p>
-                    <h1>Smart feedback for your dream job</h1>
-                    {isProcessing ? (
-                        <>
-                            <h2>{statusText}</h2>
-                            <p className="section-copy">
-                                We are preparing your file, extracting the content, and building your feedback dashboard.
-                            </p>
-                            <div className="gradient-border w-full max-w-4xl">
-                                <img src="/images/resume-scan.gif" className="w-full rounded-[1.5rem]" />
-                            </div>
-                        </>
-                    ) : (
-                        <>
-                            <h2>Drop your resume for an ATS score and focused improvement tips</h2>
-                            <p className="section-copy">
-                                Add the role context, upload your PDF, and get a review experience that feels clear enough to act on right away.
-                            </p>
-                        </>
-                    )}
-                    {!isProcessing && (
-                        <form id="upload-form" onSubmit={handleSubmit} className="panel-card mt-6 max-w-4xl gap-5 text-left">
-                            <div className="form-div">
-                                <label htmlFor="company-name">Company Name</label>
-                                <input type="text" name="company-name" placeholder="Company Name" id="company-name" />
-                            </div>
-                            <div className="form-div">
-                                <label htmlFor="job-title">Job Title</label>
-                                <input type="text" name="job-title" placeholder="Job Title" id="job-title" />
-                            </div>
-                            <div className="form-div">
-                                <label htmlFor="job-description">Job Description</label>
-                                <textarea rows={5} name="job-description" placeholder="Job Description" id="job-description" />
-                            </div>
-
-                            <div className="form-div">
-                                <label htmlFor="uploader">Upload Resume</label>
-                                <FileUploader onFileSelect={handleFileSelect} />
+                <section className="main-section">
+                    <div className="page-heading py-16">
+                        <div className="split-panel items-start">
+                            <div className="hero-copy">
+                                <p className="eyebrow">High-impact upload flow</p>
+                                <h1>Smart feedback for your dream job</h1>
+                                {isProcessing ? (
+                                    <>
+                                        <h2>{statusText}</h2>
+                                        <p className="section-copy">
+                                            We are preparing your file, extracting the content, and building your feedback dashboard.
+                                        </p>
+                                    </>
+                                ) : (
+                                    <>
+                                        <h2>Drop your resume for an ATS score and focused improvement tips</h2>
+                                        <p className="section-copy">
+                                            Add the role context, upload your PDF, and get a review experience that feels clear enough to act on right away.
+                                        </p>
+                                    </>
+                                )}
+                                <div className="metrics-row">
+                                    <div className="metric-card">
+                                        <strong>01</strong>
+                                        <span>Upload your PDF</span>
+                                    </div>
+                                    <div className="metric-card">
+                                        <strong>02</strong>
+                                        <span>Add the role context</span>
+                                    </div>
+                                    <div className="metric-card">
+                                        <strong>03</strong>
+                                        <span>Review the AI breakdown</span>
+                                    </div>
+                                </div>
                             </div>
 
-                            <button className="primary-button" type="submit">
-                                Analyze Resume
-                            </button>
-                        </form>
-                    )}
-                </div>
-            </section>
+                            <div className="hero-preview">
+                                <div className="hero-preview-card">
+                                    {isProcessing ? (
+                                        <img src="/images/resume-scan.gif" className="w-full rounded-[1.5rem]" />
+                                    ) : (
+                                        <div className="preview-stack">
+                                            <div className="preview-resume">
+                                                <div className="preview-chip-row">
+                                                    <span className="preview-chip">Tailored</span>
+                                                    <span className="preview-chip">Scored</span>
+                                                    <span className="preview-chip">Readable</span>
+                                                </div>
+                                                <div className="preview-line w-[65%]" />
+                                                <div className="preview-line soft w-[46%]" />
+                                                <div className="space-y-3 pt-4">
+                                                    <div className="preview-line soft w-full" />
+                                                    <div className="preview-line soft w-[92%]" />
+                                                    <div className="preview-line soft w-[80%]" />
+                                                    <div className="preview-line soft w-[86%]" />
+                                                </div>
+                                                <div className="rounded-[1.2rem] bg-[#eef3ff] p-4">
+                                                    <div className="preview-line w-[54%]" />
+                                                    <div className="preview-line soft mt-3 w-[78%]" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                        {!isProcessing && (
+                            <form id="upload-form" onSubmit={handleSubmit} className="panel-card mt-6 max-w-5xl gap-5 text-left">
+                                <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2">
+                                    <div className="form-div">
+                                        <label htmlFor="company-name">Company Name</label>
+                                        <input type="text" name="company-name" placeholder="Company Name" id="company-name" />
+                                    </div>
+                                    <div className="form-div">
+                                        <label htmlFor="job-title">Job Title</label>
+                                        <input type="text" name="job-title" placeholder="Job Title" id="job-title" />
+                                    </div>
+                                </div>
+                                <div className="form-div">
+                                    <label htmlFor="job-description">Job Description</label>
+                                    <textarea rows={5} name="job-description" placeholder="Job Description" id="job-description" />
+                                </div>
+
+                                <div className="form-div">
+                                    <label htmlFor="uploader">Upload Resume</label>
+                                    <FileUploader onFileSelect={handleFileSelect} />
+                                </div>
+
+                                <button className="primary-button md:w-fit md:min-w-[15rem]" type="submit">
+                                    Analyze Resume
+                                </button>
+                            </form>
+                        )}
+                    </div>
+                </section>
+            </div>
         </main>
     )
 }
