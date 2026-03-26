@@ -33,7 +33,7 @@ const ATS: React.FC<ATSProps> = ({ score, suggestions }) => {
       : 'Needs Improvement';
 
   return (
-    <div className={`w-full rounded-[2rem] bg-gradient-to-b ${gradientClass} to-white p-6 shadow-[0_24px_70px_rgba(15,23,42,0.08)] sm:p-8`}>
+    <div className={`w-full rounded-[2rem] border border-white/70 bg-gradient-to-b ${gradientClass} to-white p-6 shadow-[0_24px_70px_rgba(15,23,42,0.08)] sm:p-8`}>
       <div className="mb-6 flex items-center gap-4">
         <img src={iconSrc} alt="ATS Score Icon" className="w-12 h-12" />
         <div>
@@ -50,7 +50,7 @@ const ATS: React.FC<ATSProps> = ({ score, suggestions }) => {
 
         <div className="space-y-3">
           {suggestions.map((suggestion, index) => (
-            <div key={index} className="flex items-start gap-3 rounded-[1.25rem] bg-white/75 px-4 py-3">
+            <div key={index} className="flex items-start gap-3 rounded-[1.25rem] border border-white/80 bg-white/75 px-4 py-3 shadow-[0_12px_30px_rgba(48,40,29,0.05)]">
               <img
                 src={suggestion.type === "good" ? "/icons/check.svg" : "/icons/warning.svg"}
                 alt={suggestion.type === "good" ? "Check" : "Warning"}
