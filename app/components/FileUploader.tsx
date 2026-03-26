@@ -49,7 +49,7 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
                                     </p>
                                 </div>
                             </div>
-                            <button className="p-2 cursor-pointer" onClick={(e) => {
+                            <button className="rounded-full border border-slate-200 bg-white/80 p-2 cursor-pointer transition hover:border-slate-300" onClick={(e) => {
                                 e.stopPropagation();
                                 setSelectedFile(null);
                                 onFileSelect?.(null)
@@ -59,7 +59,7 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
                         </div>
                     ): (
                         <div>
-                            <div className="mx-auto mb-3 flex h-18 w-18 items-center justify-center rounded-full bg-[#f4efe9]">
+                            <div className="mx-auto mb-3 flex h-18 w-18 items-center justify-center rounded-full border border-white/70 bg-[linear-gradient(135deg,#fff8f1,#f1f4ff)] shadow-[0_16px_35px_rgba(48,40,29,0.08)]">
                                 <img src="/icons/info.svg" alt="upload" className="size-12" />
                             </div>
                             <p className="text-lg text-slate-600">
