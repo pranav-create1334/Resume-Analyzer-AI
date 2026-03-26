@@ -22,14 +22,14 @@ const ResumeCard = ({ resume: { id, companyName, jobTitle, feedback, imagePath }
         <Link to={`/resume/${id}`} className="resume-card group animate-in fade-in duration-1000">
             <div className="resume-card-header">
                 <div className="flex flex-col gap-3">
-                    <span className="w-fit rounded-full bg-[#f1ebe5] px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-[#7a5f4f]">
+                    <span className="section-kicker w-fit">
                         Resume Snapshot
                     </span>
                     {companyName && <h2 className="break-words !text-slate-950 font-bold">{companyName}</h2>}
                     {jobTitle && <h3 className="break-words text-base text-slate-500">{jobTitle}</h3>}
                     {!companyName && !jobTitle && <h2 className="!text-slate-950 font-bold">Resume</h2>}
                 </div>
-                <div className="flex-shrink-0 self-start rounded-[1.75rem] border border-slate-100 bg-[#fcfaf7] p-2">
+                <div className="flex-shrink-0 self-start rounded-[1.75rem] border border-white/70 bg-white/70 p-2 shadow-[0_16px_30px_rgba(48,40,29,0.07)]">
                     <ScoreCircle score={feedback.overallScore} />
                 </div>
             </div>
@@ -44,9 +44,9 @@ const ResumeCard = ({ resume: { id, companyName, jobTitle, feedback, imagePath }
                     </div>
                 </div>
                 )}
-            <div className="mt-auto flex items-center justify-between border-t border-slate-200/70 pt-2 text-sm font-medium text-slate-500">
+            <div className="mt-auto flex items-center justify-between border-t border-slate-200/70 pt-3 text-sm font-medium text-slate-500">
                 <span>View full breakdown</span>
-                <span className="text-slate-900 transition duration-200 group-hover:translate-x-1">Open</span>
+                <span className="rounded-full bg-slate-900 px-3 py-1 text-white transition duration-200 group-hover:translate-x-1">Open</span>
             </div>
         </Link>
     )
