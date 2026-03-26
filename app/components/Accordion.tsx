@@ -72,7 +72,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
                                                                 className = "",
                                                             }) => {
     return (
-        <div className={`overflow-hidden border-b border-slate-200/70 ${className}`}>
+        <div className={`overflow-hidden border-b border-slate-200/70 last:border-none ${className}`}>
             {children}
         </div>
     );
