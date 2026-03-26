@@ -60,7 +60,7 @@ const CategoryContent = ({
   tips: { type: "good" | "improve"; tip: string; explanation: string }[];
 }) => {
   return (
-      <div className="flex flex-col gap-4 items-center w-full">
+      <div className="flex w-full flex-col items-center gap-4">
         <div className="detail-grid">
           {tips.map((tip, index) => (
               <div className="flex flex-row gap-2 items-center" key={index}>
@@ -75,7 +75,7 @@ const CategoryContent = ({
               </div>
           ))}
         </div>
-        <div className="flex flex-col gap-4 w-full">
+        <div className="flex w-full flex-col gap-4">
           {tips.map((tip, index) => (
               <div
                   key={index + tip.tip}
@@ -106,7 +106,7 @@ const CategoryContent = ({
 
 const Details = ({ feedback }: { feedback: Feedback }) => {
   return (
-      <div className="flex flex-col gap-4 w-full">
+      <div className="report-grid w-full">
         <Accordion className="report-surface">
           <div className="mb-2">
             <p className="section-kicker w-fit">Category deep dive</p>

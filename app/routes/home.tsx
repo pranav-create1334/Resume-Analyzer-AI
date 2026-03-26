@@ -45,7 +45,7 @@ export default function Home() {
 
       <section className="main-section">
         <div className="page-heading py-16">
-          <div className="split-panel items-center">
+          <div className="hero-frame split-panel items-center">
             <div className="hero-copy">
               <p className="eyebrow">Sharper first impressions</p>
               <h1>Track Your Applications & Resume Ratings</h1>
@@ -67,7 +67,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hero-preview">
+            <div className="hero-preview float-slower">
               <div className="hero-preview-card">
                 <div className="preview-stack">
                   <div className="preview-resume">
@@ -100,15 +100,15 @@ export default function Home() {
           </div>
 
           <div className="metrics-row">
-            <div className="metric-card">
+            <div className="metric-card animate-in fade-in duration-700 stagger-1">
               <strong>{loadingResumes ? "..." : resumes.length}</strong>
               <span>Saved Resume Reviews</span>
             </div>
-            <div className="metric-card">
+            <div className="metric-card animate-in fade-in duration-700 stagger-2">
               <strong>ATS</strong>
               <span>Screening clarity at a glance</span>
             </div>
-            <div className="metric-card">
+            <div className="metric-card animate-in fade-in duration-700 stagger-3">
               <strong>AI</strong>
               <span>Actionable guidance for each version</span>
             </div>

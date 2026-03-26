@@ -7,9 +7,9 @@ const Category = ({ title, score }: { title: string, score: number }) => {
         ? 'text-yellow-600' : 'text-red-600';
 
     return (
-        <div className="resume-summary">
+        <div className="score-tile">
             <div className="category">
-                <div className="flex flex-row gap-3 items-center justify-center">
+                <div className="flex flex-row gap-3 items-center">
                     <p className="text-xl font-semibold text-slate-900 sm:text-2xl">{title}</p>
                     <ScoreBadge score={score} />
                 </div>
@@ -36,10 +36,12 @@ const Summary = ({ feedback }: { feedback: Feedback }) => {
                 </div>
             </div>
 
-            <Category title="Tone & Style" score={feedback.toneAndStyle.score} />
-            <Category title="Content" score={feedback.content.score} />
-            <Category title="Structure" score={feedback.structure.score} />
-            <Category title="Skills" score={feedback.skills.score} />
+            <div className="summary-grid pt-6">
+                <Category title="Tone & Style" score={feedback.toneAndStyle.score} />
+                <Category title="Content" score={feedback.content.score} />
+                <Category title="Structure" score={feedback.structure.score} />
+                <Category title="Skills" score={feedback.skills.score} />
+            </div>
         </div>
     )
 }

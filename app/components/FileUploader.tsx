@@ -68,6 +68,20 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
                                 </span> or drag and drop
                             </p>
                             <p className="text-sm uppercase tracking-[0.2em] text-slate-500">PDF only, up to {formatSize(maxFileSize)}</p>
+                            <div className="uploader-hint-grid">
+                                <div className="uploader-hint">
+                                    <strong>Preferred</strong>
+                                    <span>Clean one-page PDF layouts are easiest to review.</span>
+                                </div>
+                                <div className="uploader-hint">
+                                    <strong>Best result</strong>
+                                    <span>Use a role-specific description for sharper feedback.</span>
+                                </div>
+                                <div className="uploader-hint">
+                                    <strong>Included</strong>
+                                    <span>ATS score, structure review, and improvement tips.</span>
+                                </div>
+                            </div>
                         </div>
                     )}
                 </div>

@@ -111,7 +111,7 @@ const Upload = () => {
 
                 <section className="main-section">
                     <div className="page-heading py-16">
-                        <div className="split-panel items-start">
+                        <div className="hero-frame split-panel items-start">
                             <div className="hero-copy">
                                 <p className="eyebrow">High-impact upload flow</p>
                                 <h1>Smart feedback for your dream job</h1>
@@ -131,22 +131,22 @@ const Upload = () => {
                                     </>
                                 )}
                                 <div className="metrics-row">
-                                    <div className="metric-card">
+                                    <div className="metric-card animate-in fade-in duration-700 stagger-1">
                                         <strong>01</strong>
                                         <span>Upload your PDF</span>
                                     </div>
-                                    <div className="metric-card">
+                                    <div className="metric-card animate-in fade-in duration-700 stagger-2">
                                         <strong>02</strong>
                                         <span>Add the role context</span>
                                     </div>
-                                    <div className="metric-card">
+                                    <div className="metric-card animate-in fade-in duration-700 stagger-3">
                                         <strong>03</strong>
                                         <span>Review the AI breakdown</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="hero-preview">
+                            <div className="hero-preview float-slow">
                                 <div className="hero-preview-card">
                                     {isProcessing ? (
                                         <img src="/images/resume-scan.gif" className="w-full rounded-[1.5rem]" />
