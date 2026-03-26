@@ -43,9 +43,10 @@ const ScoreCircle = ({ score = 75 }: { score: number }) => {
                 />
             </svg>
 
-            {/* Score and issues */}
+            <div className="absolute inset-[12px] rounded-full bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(249,244,238,0.9))] shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]" />
             <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <span className="text-sm font-semibold text-slate-900">{`${score}/100`}</span>
+                <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-400">Score</span>
             </div>
         </div>
     );
