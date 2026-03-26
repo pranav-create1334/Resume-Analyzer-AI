@@ -61,7 +61,7 @@ const CategoryContent = ({
 }) => {
   return (
       <div className="flex flex-col gap-4 items-center w-full">
-        <div className="grid w-full grid-cols-1 gap-3 rounded-[1.5rem] bg-[#f8f4ef] px-5 py-4 sm:grid-cols-2">
+        <div className="detail-grid">
           {tips.map((tip, index) => (
               <div className="flex flex-row gap-2 items-center" key={index}>
                 <img
@@ -80,10 +80,8 @@ const CategoryContent = ({
               <div
                   key={index + tip.tip}
                   className={cn(
-                      "flex flex-col gap-2 rounded-[1.5rem] p-5 shadow-[0_12px_30px_rgba(15,23,42,0.04)]",
-                      tip.type === "good"
-                          ? "bg-green-50 border border-green-200 text-green-700"
-                          : "bg-yellow-50 border border-yellow-200 text-yellow-700"
+                      "detail-note",
+                      tip.type === "good" ? "good" : "improve"
                   )}
               >
                 <div className="flex flex-row gap-2 items-center">
@@ -109,7 +107,7 @@ const CategoryContent = ({
 const Details = ({ feedback }: { feedback: Feedback }) => {
   return (
       <div className="flex flex-col gap-4 w-full">
-        <Accordion className="panel-card">
+        <Accordion className="report-surface">
           <div className="mb-2">
             <p className="section-kicker w-fit">Category deep dive</p>
             <h3 className="mt-4 text-2xl font-bold text-slate-950">Detailed feedback</h3>
